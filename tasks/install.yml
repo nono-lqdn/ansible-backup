@@ -14,7 +14,7 @@
     repo: ppa:duplicity-team/duplicity-release-git
     state: present
     update_cache: yes
-  when: (backup_duplicity_ppa is defined) and ( backup_duplicity_ppa | lenght > 0 )
+  when: (backup_duplicity_ppa is defined) and ( backup_duplicity_ppa | length > 0 )
 
 - set_fact:
     backup_duplicity_pkg: "{{ backup_duplicity_pkg }}={{ backup_duplicity_version }}"
