@@ -1,6 +1,7 @@
 ---
 
-- include_vars: "{{ ansible_facts[distribution] }}.yml"
+- name: Include OS-specific variables.
+  include_vars: "{{ ansible_facts.os_family }}.yml"
 
 - name: Remove legacy duplicity repository
   apt_repository:
