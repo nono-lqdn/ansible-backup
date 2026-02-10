@@ -1,6 +1,6 @@
 ---
 
-- include_vars: "{{ ansible_distribution }}.yml"
+- include_vars: "{{ ansible_facts[distribution] }}.yml"
 
 - name: Remove legacy duplicity repository
   apt_repository:
