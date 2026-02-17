@@ -114,7 +114,7 @@
     weekday: "{{ item.schedule.split(' ')[4] }}"
     name: "{{ item.name }}"
   loop: "{{ backup_profiles }}"
-  when: backup_cron is defined and backup_cron | default(false) and item.schedule|default(None)
+  when: (backup_cron is defined and backup_cron | default(false)) and (item.schedule is not none |default(None))
 
 - name: backup-configure | Create log files
   file:
