@@ -33,7 +33,7 @@ export {{ key }}={{ value|quote }}
 {% endfor %}
 
 {% if item.source.startswith('postgresql://') or item.source.startswith('mysql://') or item.source.startswith('mongo://') or item.source.startswith('redis://') %}
-SOURCE='{{ item.work_dir|default(backup_work) }}/{{ item.name }}/dump'
+SOURCE='{{ item.work_dir|default(backup_work) }}/{{ item.name }}/'
 {% else %}
 SOURCE='{{ item.source|default(backup_source)}}'
 {% endif %}
