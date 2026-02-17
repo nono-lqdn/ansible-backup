@@ -1,8 +1,8 @@
 ---
 
-backup_enabled: yes             # Enable the role
-backup_remove: no               # Set yes for uninstall the role from target system
-backup_cron: yes                # Setup cron tasks for backup
+backup_enabled: true             # Enable the role
+backup_remove: false               # Set True for uninstall the role from target system
+backup_cron: true                # Setup cron tasks for backup
 
 backup_user: root               # Run backups as user
 backup_group: "{{ backup_user }}"
@@ -17,8 +17,8 @@ backup_duplicity_ppa: false
 
 # Logging
 backup_logdir: /var/log/duply   # Place where logs will be keepped
-backup_logrotate: yes           # Setup logs rotation
-backup_prometheus: no
+backup_logrotate: true           # Setup logs rotation
+backup_prometheus: false
 backup_prometheus_dir: /var/lib/node_exporter
 backup_node_exporter_group: "{{ node_exporter_system_group | default('node-exp') }}"
 
