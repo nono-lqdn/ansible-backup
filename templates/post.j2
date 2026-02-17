@@ -13,7 +13,7 @@ rm -rf $WORKDIR/dump
 {% endfor %}
 
 {% if backup_prometheus %}
-if [ $CMD_ERR = 0 ]; then
+if [ $CMD_ERR == 0 ]; then
   cat << EOT >> {{ backup_prometheus_dir }}/backup_{{ item.name }}.prom.$$
 # HELP backup_time Last backup in seconds.
 # TYPE backup_time gauge
